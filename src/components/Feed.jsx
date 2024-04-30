@@ -13,7 +13,7 @@ const [videos, setVideos] = useState([])
   return (
 	<div className='flex flex-col lg:flex-row'>
     {/* sidebar */}
-    <div className="px-4 border-r border-red-500">
+    <div className=" lg:basis-[250px] shrink-0 px-4 border-r border-red-500">
       <Sidebar 
         selectedCategory={selectedCategory} 
         setSelectedCategory={setSelectedCategory}
@@ -21,7 +21,7 @@ const [videos, setVideos] = useState([])
       
     </div>
     {/* videos list */}
-    <div className="flex flex-col gap-4 px-4 overflow-y-scroll">
+    <div className="flex flex-col gap-4 px-4">
       <h4 className='font-bold text-3xl'>{selectedCategory} <span className='text-red-500'>videos</span></h4>
       <Videos videos={videos} selectedCategory={selectedCategory}/>
     </div>
