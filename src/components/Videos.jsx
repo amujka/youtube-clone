@@ -2,17 +2,16 @@ import React from 'react'
 import VideoCard from './VideoCard';
 import ChannelCard from './ChannelCard';
 
-const Videos = ({videos}) => {
-	console.log("videos",videos);
+const Videos = ({videos,isPending}) => {
+console.log(videos);
 	return (
-		<div className='grid grid-cols-12 gap-4 overflow-y-scroll'>
+		<div className='videos_list grid grid-cols-12 gap-x-4 gap-y-5 overflow-y-scroll lg:h-[calc(100vh-66px-60px)]'>
 			{
+				isPending ? <div className='col-span-12 flex items-center justify-center h-full text-4xl font-bold'>Loading...</div>:
 				videos.map((item,index) => (
-					
-					<div className='col-span-12 md:col-span-4 xl:col-span-3 2xl:col-span-2 border border-white/50' key={index}>
-						{item.id.videoId && <VideoCard video={item}/>}
-						{item.id.channelId && <ChannelCard channel={item}/>}
-					</div>
+					item.id.videoId ? <VideoCard video={item} key={item.id.videoId}/> :
+					item.id.channelId ? <ChannelCard channel={item} key={item.id.channelId+index}/> :
+					item.id.playlistId && <VideoCard video={item} key={item.id.playlistId}/>
 				))
 			}
 		</div>

@@ -11,12 +11,13 @@ import GraphicEqIcon from '@mui/icons-material/GraphicEq';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
+import BookIcon from '@mui/icons-material/Book';
 
 export const categories = [
 	{ name: 'New', icon: <HomeIcon /> },
 	{ name: 'Coding', icon: <CodeIcon /> },
 	{ name: 'ReactJS', icon: <CodeIcon /> },
-	{ name: 'NextJS', icon: <CodeIcon /> },
+	{ name: 'German', icon: <BookIcon /> },
 	{ name: 'Music', icon: <MusicNoteIcon /> },
 	{ name: 'Education', icon: <SchoolIcon /> },
 	{ name: 'Podcast', icon: <GraphicEqIcon /> },
