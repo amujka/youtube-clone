@@ -7,7 +7,7 @@ import ChannelDetail from './components/ChannelDetail';
 const App = () => {
 	return (
 		<BrowserRouter>
-			<div className='h-screen max-h-screen bg-slate-950'>
+			<div className='bg-slate-950'>
 				<Navbar />
 				<Routes>
 					<Route exact path='/' element={<Feed />} />

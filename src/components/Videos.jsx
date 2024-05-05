@@ -2,10 +2,10 @@ import React from 'react'
 import VideoCard from './VideoCard';
 import ChannelCard from './ChannelCard';
 
-const Videos = ({videos,isPending}) => {
+const Videos = ({videos,isPending, canScroll}) => {
 console.log(videos);
 	return (
-		<div className='videos_list grid grid-cols-12 gap-x-4 gap-y-5 overflow-y-scroll lg:h-[calc(100vh-66px-60px)]'>
+		<div className={`videos_list grid grid-cols-12 gap-x-4 gap-y-5 ${canScroll ? 'overflow-y-scroll lg:h-[calc(100vh-66px-60px)]' : ''}`}>
 			{
 				isPending ? <div className='col-span-12 flex items-center justify-center h-full text-4xl font-bold'>Loading...</div>:
 				videos.map((item,index) => (

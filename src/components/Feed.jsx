@@ -23,7 +23,7 @@ const [isPending, setIsPending] = useState(true)
       
     <div className="lg:flex-1 flex flex-col gap-4 px-4">
       <h4 className='font-bold text-3xl'>{selectedCategory} <span className='text-red-500'>videos</span></h4>
-      <Videos videos={videos} selectedCategory={selectedCategory} isPending={isPending}/>
+      <Videos videos={videos} isPending={isPending} canScroll={true}/>
     </div>
   </div>
   )
