@@ -6,7 +6,7 @@ function ChannelDetail() {
     let { id } = useParams();
 
     const {data:channelDetails,isPending:channelDetailsPending,error:channelDetailsError} = useFetch(`channels?part=snippet&maxResults=50&id=${id}&`,id)
-    const {data:channelVideos,isPending:channelVideosPending,error:channelVideosError} = useFetch(`search?part=snippet&maxResults=50&channelId=${id}&&order=date`,id)
+    const {data:channelVideos,isPending:channelVideosPending} = useFetch(`search?part=snippet&maxResults=50&channelId=${id}&&order=date`,id)
 
     return (
         channelDetailsPending ? <div className=' flex items-center justify-center h-full text-4xl font-bold'>Loading...</div>:
@@ -33,7 +33,7 @@ function ChannelDetail() {
                     <p className="lg:hidden text-sm text-gray-400 mt-2">{channelDetails[0]?.brandingSettings.channel.description}</p>
                 </div>
                 <div className="mt-4 lg:mt-8">
-                    <Videos videos={channelVideos} canScroll={false}/>
+                    {!channelVideosPending && <Videos videos={channelVideos} canScroll={false}/>}
                 </div>
             </div>
         </>
